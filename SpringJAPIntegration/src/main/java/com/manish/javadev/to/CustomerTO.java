@@ -1,27 +1,15 @@
-package com.manish.javadev.model;
+package com.manish.javadev.to;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+public class CustomerTO {
 
-@Entity
-@Table(name = "Customer")
-public class Customer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "cid")
 	private int custId;
 	private String firstName;
 	private String lastName;
 	private int age;
 	private String city;
 
-	public Customer(int custId, String firstName, String lastName, int age,
-			String city) {
-		super();
+	public CustomerTO(int custId, String firstName, String lastName,
+			int age, String city) {
 		this.custId = custId;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -29,14 +17,7 @@ public class Customer {
 		this.city = city;
 	}
 
-	public Customer(String firstName, String lastName, int age, String city) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.age = age;
-		this.city = city;
-	}
-
-	public Customer() {
+	public CustomerTO() {
 	}
 
 	public int getCustId() {
@@ -78,4 +59,12 @@ public class Customer {
 	public void setCity(String city) {
 		this.city = city;
 	}
+
+	@Override
+	public String toString() {
+		return "CustomerTO [custId=" + custId + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", age=" + age + ", city=" + city
+				+ "]";
+	}
+	
 }

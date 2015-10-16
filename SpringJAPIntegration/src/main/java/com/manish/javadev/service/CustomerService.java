@@ -1,12 +1,13 @@
-package com.manish.javadev.dao;
+package com.manish.javadev.service;
 
 import java.util.List;
+
 import com.manish.javadev.to.CustomerTO;
 
-public interface CustomerDAO {
+public interface CustomerService {
 	void addCustomer(CustomerTO cust);
 
-	void updateCustomer(int custId);
+	void updateCustomer(CustomerTO cust);
 
 	void deleteCustomer(int custId);
 
