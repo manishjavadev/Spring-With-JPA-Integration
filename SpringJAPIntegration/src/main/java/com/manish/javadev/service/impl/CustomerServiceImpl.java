@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.manish.javadev.dao.CustomerDAO;
 import com.manish.javadev.service.CustomerService;
@@ -13,7 +14,7 @@ import com.manish.javadev.to.CustomerTO;
 public class CustomerServiceImpl implements CustomerService {
 	@Autowired
 	private CustomerDAO customerDao;
-
+	@Transactional
 	public void addCustomer(CustomerTO cto) {
 		System.out.println("CustomerDao = " + customerDao);
 		customerDao.addCustomer(cto);
