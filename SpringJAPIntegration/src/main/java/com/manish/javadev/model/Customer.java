@@ -12,26 +12,29 @@ import javax.persistence.Table;
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "cid")
+	@Column(name = "CID")
 	private int cid;
 
-	@Column(name = "fName")
+	@Column(name = "F_NAME")
 	private String fname;
 
-	@Column(name = "lName")
+	@Column(name = "L_NAME")
 	private String lname;
 
-	@Column(name = "Age")
+	@Column(name = "AGE")
 	private int age;
+	@Column(name = "CITY")
+	private String city;
 
 	public Customer() {
 	
 	}
 
-	public Customer(String fname, String lname, int age) {
+	public Customer(String fname, String lname, int age,String city) {
 		this.fname = fname;
 		this.lname = lname;
 		this.age = age;
+		this.city = city;
 	}
 
 	public int getCid() {
@@ -65,5 +68,14 @@ public class Customer {
 	public void setAge(int age) {
 		this.age = age;
 	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
 	
 }

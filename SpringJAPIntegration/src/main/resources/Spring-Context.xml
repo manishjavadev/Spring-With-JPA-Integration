@@ -30,7 +30,10 @@
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 	
-	<bean id="custdao" class="com.manish.javadev.dao.impl.CustomerDAOImpl" />
-	<bean id="customerservice" class="com.manish.javadev.service.impl.CustomerServiceImpl" />
+	<context:component-scan base-package="com.manish.javadev.dao.impl" />
+	<context:component-scan base-package="com.manish.javadev.service.impl" />
+	
+	<!-- <bean id="custdao" class="com.manish.javadev.dao.impl.CustomerDAOImpl" />
+	<bean id="customerservice" class="com.manish.javadev.service.impl.CustomerServiceImpl" /> -->
 
 </beans>

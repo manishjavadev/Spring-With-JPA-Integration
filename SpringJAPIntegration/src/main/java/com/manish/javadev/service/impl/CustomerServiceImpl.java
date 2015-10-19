@@ -2,24 +2,32 @@ package com.manish.javadev.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.manish.javadev.dao.CustomerDAO;
+import com.manish.javadev.service.CustomerService;
 import com.manish.javadev.to.CustomerTO;
 
-public class CustomerServiceImpl implements CustomerDAO {
+@Service
+public class CustomerServiceImpl implements CustomerService {
+	@Autowired
+	private CustomerDAO customerDao;
 
-	public void addCustomer(CustomerTO cust) {
-		// TODO Auto-generated method stub
-		
+	public void addCustomer(CustomerTO cto) {
+		System.out.println("CustomerDao = " + customerDao);
+		customerDao.addCustomer(cto);
+
 	}
 
 	public void updateCustomer(CustomerTO cust) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void deleteCustomer(int custId) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public List<CustomerTO> getAllCustomer() {
@@ -32,6 +40,4 @@ public class CustomerServiceImpl implements CustomerDAO {
 		return null;
 	}
 
-	
-	
 }
